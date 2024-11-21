@@ -1,13 +1,14 @@
-package com.example.musicapp.ui
+package com.example.musicapp.ui.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicapp.databinding.TrackCardBinding
+import com.example.musicapp.ui.lyrics.LyricsActivity
 import com.example.songsapi.models.TrackListItem
-import com.example.songsapi.models.TracksResponse
 
 class HomeAdapter: ListAdapter<TrackListItem, HomeAdapter.HomeViewHolder>
     (TrackDiffCallBack()) {
@@ -43,5 +44,15 @@ class HomeAdapter: ListAdapter<TrackListItem, HomeAdapter.HomeViewHolder>
 
         holder.binding.artistName.text = track?.artistName ?: "N/A"
         holder.binding.trackName.text = track?.trackName ?: "N/A"
+
+        holder.binding.root.apply {
+            setOnClickListener {
+                context.startActivity(
+                    Intent(context,LyricsActivity::class.java).apply {
+                        putExtra("track",track)
+                    }
+                )
+            }
+        }
     }
 }

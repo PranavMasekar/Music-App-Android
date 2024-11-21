@@ -1,4 +1,4 @@
-package com.example.musicapp.ui
+package com.example.musicapp.ui.home
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.musicapp.data.SongsRepository
 import com.example.songsapi.models.TrackListItem
-import com.example.songsapi.models.TracksResponse
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {

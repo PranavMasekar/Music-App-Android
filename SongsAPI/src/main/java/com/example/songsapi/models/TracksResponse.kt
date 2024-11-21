@@ -2,6 +2,7 @@ package com.example.songsapi.models
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import java.io.Serializable
 
 @JsonClass(generateAdapter = true)
 data class TracksResponse(
@@ -32,46 +33,46 @@ data class TrackListItem(
 @JsonClass(generateAdapter = true)
 data class Track(
     @Json(name = "album_id")
-    val albumId: Int?,
+    val albumId: Int? = null,
     @Json(name = "album_name")
-    val albumName: String?,
+    val albumName: String? = null,
     @Json(name = "artist_id")
-    val artistId: Int?,
+    val artistId: Int? = null,
     @Json(name = "artist_name")
-    val artistName: String?,
+    val artistName: String? = null,
     @Json(name = "commontrack_id")
-    val commontrackId: Int?,
+    val commontrackId: Int? = null,
     @Json(name = "explicit")
-    val explicit: Int?,
+    val explicit: Int? = null,
     @Json(name = "has_lyrics")
-    val hasLyrics: Int?,
+    val hasLyrics: Int? = null,
     @Json(name = "has_richsync")
-    val hasRichsync: Int?,
+    val hasRichsync: Int? = null,
     @Json(name = "has_subtitles")
-    val hasSubtitles: Int?,
+    val hasSubtitles: Int? = null,
     @Json(name = "instrumental")
-    val instrumental: Int?,
+    val instrumental: Int? = null,
     @Json(name = "num_favourite")
-    val numFavourite: Int?,
+    val numFavourite: Int? = null,
     @Json(name = "primary_genres")
-    val primaryGenres: PrimaryGenres?,
+    val primaryGenres: PrimaryGenres? = null,
     @Json(name = "restricted")
-    val restricted: Int?,
+    val restricted: Int? = null,
     @Json(name = "track_edit_url")
-    val trackEditUrl: String?,
+    val trackEditUrl: String? = null,
     @Json(name = "track_id")
-    val trackId: Int?,
+    val trackId: Int? = null,
     @Json(name = "track_name")
-    val trackName: String?,
+    val trackName: String? = null,
     @Json(name = "track_name_translation_list")
-    val trackNameTranslationList: List<TrackNameTranslation?>?,
+    val trackNameTranslationList: List<TrackNameTranslation?>? = null,
     @Json(name = "track_rating")
-    val trackRating: Int?,
+    val trackRating: Int? = null,
     @Json(name = "track_share_url")
-    val trackShareUrl: String?,
+    val trackShareUrl: String? = null,
     @Json(name = "updated_time")
-    val updatedTime: String?
-)
+    val updatedTime: String? = null
+) : Serializable
 
 @JsonClass(generateAdapter = true)
 data class PrimaryGenres(
